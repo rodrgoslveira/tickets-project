@@ -10,19 +10,23 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///ticket.db"
 db.init_app(app)
 ma.init_app(app)
-
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+    return response
 #Views
 #GET METHODS
 @app.route("/", methods=["GET"])
 @app.route("/getTickets", methods=["GET"])
 def list_tickets():
     tickets = Ticket.query.all()
-    return tickets_schema.jsonify(tickets)
+    return after_request(tickets_schema.jsonify(tickets))
 
 @app.route("/tickets/<string:id>", methods=["GET"])
 def get_ticket(id):
     ticket = Ticket.query.filter(Ticket.ticketId==id).first_or_404()
-    return ticket_schema.jsonify(ticket)
+    return after_request(tickets_schema.jsonify(tickets))
 
 #POST, PUT, DELETE METHODS
 @app.route("/tickets", methods=["POST"])
@@ -88,8 +92,15 @@ if __name__ == "__main__":
                         from_a= "Romina Esperanto",
                         status= "NEW",
                         body= "Mi producto no llegó, cuando deberíallegar?",)
+            ticket_tre = Ticket(ticketId= "xx",
+                        subject= "Hola, dde",
+                        date= "2020-03-02 05:30:00Z",
+                        from_a= "Romina Esperanto",
+                        status= "NEW",
+                        body= "Mi producto no llegó, cuando deberíallegar?",)
             db.session.add(ticket_one)
             db.session.add(ticket_two)
+            db.session.add(ticket_tre)
             db.session.commit()
         print("Database seeded!")
 
