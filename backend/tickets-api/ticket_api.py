@@ -92,15 +92,8 @@ if __name__ == "__main__":
                         from_a= "Romina Esperanto",
                         status= "NEW",
                         body= "Mi producto no llegó, cuando deberíallegar?",)
-            ticket_tre = Ticket(ticketId= "xx",
-                        subject= "Hola, dde",
-                        date= "2020-03-02 05:30:00Z",
-                        from_a= "Romina Esperanto",
-                        status= "NEW",
-                        body= "Mi producto no llegó, cuando deberíallegar?",)
             db.session.add(ticket_one)
             db.session.add(ticket_two)
-            db.session.add(ticket_tre)
             db.session.commit()
         print("Database seeded!")
 
