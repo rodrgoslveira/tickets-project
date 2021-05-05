@@ -1,0 +1,33 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 1px solid #d5d2d2;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+
+  .ticket-container{
+    cursor: pointer;
+  }
+  .title{
+    font-family: 'Poppins-SemiBold';
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    padding: 0.2em;
+  }
+}
+
+.ticket-container:hover{
+  background-color: rgb(225, 223, 223);
+}
+
+@media (max-width:768px) {
+  .container{
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+}

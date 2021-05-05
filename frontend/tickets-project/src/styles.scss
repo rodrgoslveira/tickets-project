@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Poppins';
+  src: url(assets/fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+}
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url(assets/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #EAEAEA; color: rgb(58, 58, 58);}

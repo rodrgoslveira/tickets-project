@@ -1,0 +1,11 @@
+<div class = "container">
+  <div class = "title">
+    <span>Tickets</span>
+  </div>
+    
+    <mat-divider></mat-divider>
+      <div class = "ticket-container" *ngFor="let ticket of currentTickets"> 
+        <app-ticket [current_ticket] = "ticket"></app-ticket>
+        <mat-divider></mat-divider>
+      </div>  
+</div>

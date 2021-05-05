@@ -1,0 +1,63 @@
+.from {
+  grid-area: from;
+  margin-top: 5px;
+  font-size: 1em;
+}
+.date {
+  justify-self: end;
+  grid-area: date;
+  margin-top: 5px;
+}
+
+.status-subject{
+  grid-area: status;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins-SemiBold', sans-serif;
+  font-size: 1.03em;
+  margin-top: 5px;
+  .status-container{
+    color: azure;
+    .new-state{
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      margin-right: 0.2em;
+      border-radius: 5px;
+      background-color: rgb(237, 86, 86);
+    }
+    .solved-state{
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      margin-right: 0.2em;
+      border-radius: 5px;
+      background-color: rgb(109, 53, 187);
+    }
+
+  }
+
+}
+
+.arrow-container{
+  grid-area:arrow;
+  justify-self: end;
+  color: rgb(237, 86, 86);
+}
+.body {
+  grid-area: body;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "from date"
+    "status arrow"
+    "body body";
+   font-size:0.8em;
+   
+}

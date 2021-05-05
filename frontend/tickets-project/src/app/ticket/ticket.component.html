@@ -1,0 +1,28 @@
+
+    <div class = "container">
+      <div class = "from">
+        De: {{ current_ticket.from_a }}
+      </div>
+      <div class = "date">
+        Enviado: {{ current_ticket.date | date:'d/M/yy, H:mm ' }}
+      </div>
+      <div class = "status-subject">
+        <div class = "status-container">
+          <div *ngIf="current_ticket.status == 'NEW'" class = 'new-state'>
+            <span>NUEVO</span>
+          </div>
+          <div *ngIf="current_ticket.status == 'SOLVED'" class = 'solved-state'>
+            <span>RESPONDIDO</span>
+          </div>
+        </div>
+        <div class = "subject-container">
+          {{ current_ticket.subject }}
+        </div>
+      </div>
+      <div class = "arrow-container">
+        <span class="material-icons">arrow_forward_ios</span>
+      </div>
+      <div class = "body">
+        {{ current_ticket.body }}
+      </div>
+    </div>
